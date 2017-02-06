@@ -794,7 +794,7 @@ class LexerTest extends \PHPUnit_Framework_TestCase
                     ['eq', Token::T_OPERATOR],
                     ['(', Token::T_OPEN_PARENTHESIS],
                     ['name', Token::T_STRING],
-                    [', ', Token::T_COMMA],
+                    [',', Token::T_COMMA],
                     ['value', Token::T_STRING],
                     [')', Token::T_CLOSE_PARENTHESIS],
                 ],
@@ -802,37 +802,37 @@ class LexerTest extends \PHPUnit_Framework_TestCase
             'deep groups & mix groups with operators and spaces' => [
                 '(  eq(a , b) | lt(   c,d   ) | and(  gt(e,f) , (ne(g,h)|gt(i,j)|in(k,(l,m,n)  )|(o<>p&q=le=r)))  )',
                 [
-                    ['(  ', Token::T_OPEN_PARENTHESIS],
+                    ['(', Token::T_OPEN_PARENTHESIS],
 
                     ['eq', Token::T_OPERATOR],
                     ['(', Token::T_OPEN_PARENTHESIS],
                     ['a', Token::T_STRING],
-                    [' , ', Token::T_COMMA],
+                    [',', Token::T_COMMA],
                     ['b', Token::T_STRING],
-                    [') ', Token::T_CLOSE_PARENTHESIS],
+                    [')', Token::T_CLOSE_PARENTHESIS],
 
-                    ['| ', Token::T_VERTICAL_BAR],
+                    ['|', Token::T_VERTICAL_BAR],
 
                     ['lt', Token::T_OPERATOR],
-                    ['(   ', Token::T_OPEN_PARENTHESIS],
+                    ['(', Token::T_OPEN_PARENTHESIS],
                     ['c', Token::T_STRING],
                     [',', Token::T_COMMA],
                     ['d', Token::T_STRING],
-                    ['   ) ', Token::T_CLOSE_PARENTHESIS],
+                    [')', Token::T_CLOSE_PARENTHESIS],
 
-                    ['| ', Token::T_VERTICAL_BAR],
+                    ['|', Token::T_VERTICAL_BAR],
 
                     ['and', Token::T_OPERATOR],
-                    ['(  ', Token::T_OPEN_PARENTHESIS],
+                    ['(', Token::T_OPEN_PARENTHESIS],
 
                     ['gt', Token::T_OPERATOR],
                     ['(', Token::T_OPEN_PARENTHESIS],
                     ['e', Token::T_STRING],
                     [',', Token::T_COMMA],
                     ['f', Token::T_STRING],
-                    [') ', Token::T_CLOSE_PARENTHESIS],
+                    [')', Token::T_CLOSE_PARENTHESIS],
 
-                    [', ', Token::T_COMMA],
+                    [',', Token::T_COMMA],
 
                     ['(', Token::T_OPEN_PARENTHESIS],
 
@@ -864,7 +864,7 @@ class LexerTest extends \PHPUnit_Framework_TestCase
                     ['m', Token::T_STRING],
                     [',', Token::T_COMMA],
                     ['n', Token::T_STRING],
-                    [')  ', Token::T_CLOSE_PARENTHESIS],
+                    [')', Token::T_CLOSE_PARENTHESIS],
                     [')', Token::T_CLOSE_PARENTHESIS],
 
                     ['|', Token::T_VERTICAL_BAR],
@@ -881,7 +881,7 @@ class LexerTest extends \PHPUnit_Framework_TestCase
 
                     [')', Token::T_CLOSE_PARENTHESIS],
 
-                    [')  ', Token::T_CLOSE_PARENTHESIS],
+                    [')', Token::T_CLOSE_PARENTHESIS],
 
                     [')', Token::T_CLOSE_PARENTHESIS],
                 ],
