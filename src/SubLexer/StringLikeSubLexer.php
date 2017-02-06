@@ -15,6 +15,7 @@ class StringLikeSubLexer implements SubLexerInterface
         if (!preg_match($regExp, $code, $matches, null, $cursor)) {
             return null;
         } elseif (is_numeric($matches[0])) {
+            // NOTE: this case will be handled via NumberSubLexer
             return null;
         }
 
